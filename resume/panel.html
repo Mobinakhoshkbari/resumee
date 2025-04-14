@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>پنل رزومه‌ها</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>رزومه‌های ارسال‌شده</h1>
+    <div id="resumes"></div>
+    <a href="index.html">بازگشت به فرم</a>
+  </div>
+
+  <script>
+    const resumesDiv = document.getElementById('resumes');
+    const resumes = JSON.parse(localStorage.getItem('resumes')) || [];
+
+    if (resumes.length === 0) {
+      resumesDiv.innerHTML = '<p>هیچ رزومه‌ای ثبت نشده.</p>';
+    } else {
+      resumes.forEach((r, index) => {
+        resumesDiv.innerHTML += `
+          <div style="margin-bottom:20px; border-bottom:1px solid #ccc; padding-bottom:10px;">
+            <strong>${index + 1}. ${r.name}</strong><br>
+            ایمیل: ${r.email}<br>
+            مهارت‌ها: ${r.skills}<br>
+            توضیحات: ${r.description}
+          </div>
+        `;
+      });
+    }
+  </script>
+</body>
+</html>

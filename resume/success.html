@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فرم با موفقیت ارسال شد</title>
+  <style>
+    body {
+      background-color: #f0f8ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Vazir', sans-serif;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .balloon {
+      width: 100px;
+      height: 130px;
+      background-color: #ff4d6d;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: relative;
+      animation: pop 2s ease-out forwards;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      80% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    .string {
+      width: 2px;
+      height: 50px;
+      background-color: #555;
+      position: absolute;
+      top: 130px;
+      left: 49px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>تمام شد!</h1>
+  <div class="balloon">
+    <div class="string"></div>
+  </div>
+  <p>اطلاعات شما با موفقیت ثبت شد 🎉</p>
+</body>
+</html>
+
